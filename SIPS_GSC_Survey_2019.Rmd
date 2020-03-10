@@ -1,0 +1,193 @@
+---
+title: "2019 SIPS Grad Student Climate Survey Results"
+author: "Ellie Taagen &  Janani Hariharan"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(knitr)
+library(dplyr)
+library(magrittr)
+library(wesanderson)
+#Ellie creates infographics for: Q1, 2, 6, 7, 10, 11   
+#Janani creates text-based summary representation for: Q4, 5 , 8, 9, (12 as necessary)  
+#Optional longform inclusion/send to Chris: Q3  
+```
+***  
+```{r Survey import, include=FALSE}
+Survey <- read.csv("~/Dropbox/Cornell/Dept of Plant Breeding/GSC2019survey.csv", header = TRUE)
+```
+
+> In 2019 the School of Integrative Plant Science (SIPS) graduate student council developed a survey to assess the SIPS graduate students satisfaction and concerns with unification of the five sections, career path exploration, mental health resources and inclusion initiatives. The survey was distributed via the SIPS graduate student listserve (X students). The 47 participant's responses are summarized below. 
+
+
+
+#### 1) Should there be an introductory curriculum for all incoming SIPS graduate students and if yes, what should the classes be? (37 responses)  
+```{r Q1, echo = FALSE}
+ggplot(data = Survey[Survey$Question==1,], aes(Response, fill= Response))+
+  geom_bar()+
+  scale_fill_manual(values = wes_palette("FantasticFox1"))+
+  theme_classic()+
+  theme(legend.position = "none",text = element_text(size=15))+
+  xlab("")
+
+```
+
+**Suggested topics for core curriculum class:**  
+
+* Exposure to general research in SIPS  
+* Opportunity to meet students from other SIPS sections  
+* Grant writing seminar   
+* Introduction to graduate school (scientific writing, presentation skills, teaching pedagogy. RCR, TAing advice, research methods, statistics, communication, leadership and mentorship skills)  
+
+*** 
+
+#### 2) How can we increase interactions between graduate students from different sections?  
+```{r Q2, include = FALSE}
+library(scales)
+bp<- ggplot(data = Survey[Survey$Question==2,], aes(x="", y=Value, fill= Response))+ 
+  geom_bar(width = 1, stat = "identity")
+pie <- bp + coord_polar("y", start=0)
+
+blank_theme <- theme_minimal()+
+  theme(
+  axis.title.x = element_blank(),
+  axis.title.y = element_blank(),
+  panel.border = element_blank(),
+  panel.grid=element_blank(),
+  axis.ticks = element_blank(),
+  plot.title=element_text(size=14, face="bold")
+  )
+```
+```{r, echo=FALSE}
+pie + scale_fill_manual(values = wes_palette("FantasticFox1")) + blank_theme +
+  theme(axis.text.x=element_blank())+
+  geom_text(aes(y = Value/3 + c(0, cumsum(Value)[-length(Value)]), 
+                label = percent(Value/100)), size=5)
+```
+
+**Suggested joint social events:**  
+
+* Greenhouse parties  
+* Bowling nights, board game nights   
+* Head to TGIF at the Big Red Barn together   
+* Revive PPPMB's Cheers with your Peers or make our own SNEEB  
+* “Meals with Strangers” where 4-5 graduate students from different sections are matched up and given a dinner allowance   
+
+**Suggested joint academic events:**  
+
+* Joint section lightning talks   
+* Grad student colloquia  
+
+*** 
+
+#### 3) Do you have any suggestions for the SIPS building renovations that would be helpful for graduate students?   
+
+<span style="color: royalblue">**Bradfield renovations:** </span>   
+
+* *"Greater transparency about plans, expected changes and timelines, especially with time-sensitive nature of some experiments."* 
+* *"Windows (for Bradfield occupants)."*  
+* *"More power outlets at the ends of the halls in Bradfield."* 
+* *"Gender neutral bathrooms, and more even distribution of M/F bathrooms in Bradfield Hall."*  
+
+<span style="color: mediumseagreen">**Accesible commmon areas:** </span>   
+
+* *"Common meeting spaces exclusively for graduate students, with comfortable chairs, tables and desks. The goal of such a space is to increase grad wellness and socializing."*  
+* *"Accessibility for non-hearing grad students: open spaces where people can see each other and communicate, less noisy ventilation and heating systems, high contrast stairs."*  
+* *"Additional privacy/accessibility: bright lights that don’t cause eyestrain, cloth dividers to ensure privacy and mute noise, more ergonomic seating."*  
+
+<span style="color: Orange">**Anti-commmon lab spaces:** </span>     
+
+* *"Communal lab spaces would kill productivity and create resentment among lab groups, possibly reducing peer interaction."*  
+* *“Getting work done for your thesis/dissertation is hard enough without also being plopped into an open space with little privacy, or worse, having to tiptoe around other people in the same lab. The workplace does not need to be the venue for social interaction, or even for professional connection-making.”*  
+
+*** 
+
+#### 4) What do you think about the application and review process for the Schmittau-Novak Small Grants Program?  
+
+*** 
+
+#### 5) How can SIPS support graduate students in mentoring undergraduates?  
+
+*** 
+
+#### 6) Are you interested in extension or international training/jobs and if yes, how should information about jobs/training be made available? (33 responses) 
+
+```{r Q6, echo=FALSE} 
+ggplot(data = Survey[Survey$Question==6,], aes(Response, fill= Response))+
+  geom_bar()+
+  scale_fill_manual(values = wes_palette("FantasticFox1"))+
+  theme_classic()+
+  theme(legend.position = "none",text = element_text(size=15))+
+  xlab("")
+```
+
+**Yes, and:**  
+
+* Communicate via a central website that students could also contribute to, i.e. Slack  
+* Email listserv (Magdalen's emails, section chair)  
+* Panel and advice from faculty with similar career backgrounds  
+* Increased opportunities for grad students through established programs, i.e.Cornell Cooperative Extension  
+
+*** 
+
+#### 7) What type of careers are you interested in? Pick all that apply.  
+
+```{r Q7, echo=FALSE}
+ggplot(data = Survey[Survey$Question==7,], aes(Response, fill= Response))+
+  geom_bar()+
+  scale_fill_manual(values = c( "plum","palevioletred1", "firebrick", "darkorange", "goldenrod2", "mediumaquamarine", "olivedrab4", "skyblue2", "steelblue4", "orchid4", "purple4", "gray38"))+
+  theme_classic()+theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+```
+
+*** 
+
+#### 8) How can SIPS support students in learning about and preparing for different careers?  
+
+***  
+
+#### 9) How can SIPS support graduate student mental health and wellbeing?  
+
+***  
+
+#### 10) Does SIPS have an efficient process for dealing with bias and/or harassment incidents? If no, what could be improved?  
+
+> # <span style="color: Red"> 29/30 respondees were not aware of what policies SIPS had in place to combat bias or harassment in the workplace </span>   
+
+**What could be improved:**  
+
+* Publicized protocol on what to do when faced with such an incident  
+* Address concerns about retaliation when filing complaints  
+* Rectify the feeling that people in power will not take the complaint seriously
+* Establish protocol on who to talk to if being harassed, i.e. SIPS ombudsman  
+* Train staff on confidentiality and conflict resolution  
+
+***  
+
+#### 11) Have you seen an improvement in SIPS' commitment to diversity and inclusion over the last 2 years? If not, what more needs to be done?  
+```{r Q11, echo=FALSE}
+ggplot(data = Survey[Survey$Question==11,], aes(Response, fill= Response))+
+  geom_bar()+
+  scale_fill_manual(values = wes_palette("FantasticFox1"))+
+  theme_classic()+
+  theme(legend.position = "none",text = element_text(size=15))+
+  xlab("")
+```
+
+**Listed concerns about what more needs to be done:** 
+
+* Lack of sensitivity training for professors and teaching staff   
+* Little follow-through on conversations related to D&I   
+* Some sections still use the GRE as a requirement for applications    
+* SIPS ABC is very slow to shift the dial  
+* Lack of participation from graduate students in SIPS ABC  
+* Lack of updates from SIPS ABC to the general SIPS audience    
+* Funds for international students to visit Cornell and SIPS   
+* Resistance from faculty towards harassment training creates an unwelcome environment for minorities in SIPS   
+* Lack of representation in SIPS faculty  
+  + Absence of faculty of color was specifically noted  
+  + This leads to lack of appropriate mentorship and lack of belonging  
