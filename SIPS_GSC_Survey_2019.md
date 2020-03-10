@@ -4,6 +4,44 @@ Ellie Taagen & Janani Hariharan
 
 -----
 
+<STYLE type='text/css' scoped>
+PRE.fansi SPAN {padding-top: .25em; padding-bottom: .25em};
+</STYLE>
+
+Enabling coloring message using crayon in
+Rmd
+
+``` r
+message(crayon::make_style("green")("My green message."))
+```
+
+<PRE class="fansi fansi-message"><CODE>## <span style='color: #00BB00;'>My green message.</span><span>
+</span></CODE></PRE>
+
+Keeping color in tidyverse error as rlang use
+color
+
+``` r
+rlang::abort(rlang:::format_error_bullets(c(x = "dplyr-like error")), .subclass = "foobar")
+```
+
+<PRE class="fansi fansi-error"><CODE>## Error: <span style='color: #BB0000;'>x</span><span> dplyr-like error
+</span></CODE></PRE>
+
+Keeping the red values in tibble
+output
+
+``` r
+tibble::tibble(x = c(10, -10))
+```
+
+<PRE class="fansi fansi-output"><CODE>## <span style='color: #555555;'># A tibble: 2 x 1</span><span>
+##       x
+##   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
+## </span><span style='color: #555555;'>1</span><span>    10
+## </span><span style='color: #555555;'>2</span><span>   -</span><span style='color: #BB0000;'>10</span><span>
+</span></CODE></PRE>
+
 > In 2019 the School of Integrative Plant Science (SIPS) graduate
 > student council developed a survey to assess the SIPS graduate
 > students satisfaction and concerns with unification of the five
@@ -31,7 +69,7 @@ skills)
 
 #### 2\) How can we increase interactions between graduate students from different sections?
 
-![](SIPS_GSC_Survey_2019_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
+![](SIPS_GSC_Survey_2019_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 **Suggested joint social events:**
 

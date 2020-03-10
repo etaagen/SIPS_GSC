@@ -20,6 +20,33 @@ library(wesanderson)
 Survey <- read.csv("~/Dropbox/Cornell/Dept of Plant Breeding/GSC2019survey.csv", header = TRUE)
 ```
 
+```{r color, echo = FALSE, results='asis'}
+# crayon needs to be explicitly activated in Rmd
+options(crayon.enabled = TRUE)
+# Hooks needs to be set to deal with outputs
+# thanks to fansi logic
+old_hooks <- fansi::set_knit_hooks(knitr::knit_hooks, 
+                                   which = c("output", "message", "error"))
+```
+
+Enabling coloring message using crayon in Rmd
+
+```{r, message= TRUE}
+message(crayon::make_style("green")("My green message."))
+```
+
+Keeping color in tidyverse error as rlang use color
+
+```{r, error = TRUE}
+rlang::abort(rlang:::format_error_bullets(c(x = "dplyr-like error")), .subclass = "foobar")
+```
+
+Keeping the red values in tibble output
+
+```{r}
+tibble::tibble(x = c(10, -10))
+```
+
 > In 2019 the School of Integrative Plant Science (SIPS) graduate student council developed a survey to assess the SIPS graduate students satisfaction and concerns with unification of the five sections, career path exploration, mental health resources and inclusion initiatives. The survey was distributed via the SIPS graduate student listserve (X students). The 47 participant's responses are summarized below. 
 
 
