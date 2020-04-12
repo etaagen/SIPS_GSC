@@ -1,6 +1,6 @@
 ---
 title: "2019 SIPS Grad Student Climate Survey Results"
-author: "Ellie Taagen &  Janani Hariharan"
+author: "Survey authored by Janani Hariharan, results compiled by Ellie Taagen"
 output: github_document
 ---
 

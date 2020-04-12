@@ -1,6 +1,6 @@
 2019 SIPS Grad Student Climate Survey Results
 ================
-Ellie Taagen & Janani Hariharan
+Survey authored by Janani Hariharan, results compiled by Ellie Taagen
 
 -----
 
