@@ -9,8 +9,8 @@ Survey authored by Janani Hariharan, results compiled by Ellie Taagen
 > students satisfaction and concerns with unification of the five
 > sections, career path exploration, mental health resources and
 > inclusion initiatives. The survey was distributed via the SIPS
-> graduate student listserv (X students). The 47 participant’s responses
-> are summarized
+> graduate student listserv (179 students). The 47 participant’s
+> responses are summarized
 below.
 
 #### 1\) Should there be an introductory curriculum for all incoming SIPS graduate students and if yes, what should the classes be? (37 responses)

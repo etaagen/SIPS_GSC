@@ -14,7 +14,7 @@ library(wesanderson)
 ```
 ***  
 ```{r Survey import, include=FALSE}
-Survey <- read.csv("~/Dropbox/Cornell/Dept of Plant Breeding/GSC2019survey.csv", header = TRUE)
+Survey <- read.csv("https://raw.githubusercontent.com/etaagen/SIPS_GSC/master/GSC2019survey.csv")
 ```
 
 > In 2019 the School of Integrative Plant Science (SIPS) graduate student council developed a survey to assess the SIPS graduate students satisfaction and concerns with unification of the five sections, career path exploration, mental health resources and inclusion initiatives. The survey was distributed via the SIPS graduate student listserv (179 students). The 47 participant's responses are summarized below. 
