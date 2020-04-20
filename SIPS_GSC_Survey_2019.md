@@ -11,12 +11,13 @@ compiled by Ellie Taagen (et395)
 > sections, career path exploration, mental health resources and
 > inclusion initiatives. The survey was distributed via the SIPS
 > graduate student listserv (179 students). The **47 participant’s**
-> responses are summarized below.  
-> The raw survey results used to create this visualization are located
-> in the GitHub repository <https://github.com/etaagen/SIPS_GSC>,
-> qualitative file: `2019 SIPS Graduate Student Climate Survey
-> Results.pdf`, and quantitative file:
-`GSC2019survey.csv`.
+> responses are summarized below.
+
+> The raw survey data used to create this visualization are available
+> here: [qualitative
+> results](https://github.com/etaagen/SIPS_GSC/blob/master/2019%20SIPS%20Graduate%20Student%20Climate%20Survey%20Results.pdf)
+> and [quantitative
+> results](https://github.com/etaagen/SIPS_GSC/blob/master/GSC2019survey.csv).
 
 #### 1\) Should there be an introductory curriculum for all incoming SIPS graduate students and if yes, what should the classes be? (37 responses)
 
